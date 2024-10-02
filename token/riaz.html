@@ -32,7 +32,7 @@ player.configure({
             }
             player.getNetworkingEngine().registerRequestFilter(function(type, request) {
                 if (type == shaka.net.NetworkingEngine.RequestType.SEGMENT) {
-                    request.headers['authorization'] = 'Bearer';
+             //       request.headers['authorization'] = 'Bearer';
                 }
             });
   
