@@ -18,24 +18,11 @@ player.configure({
   drm: {
     clearKeys: {
       // 'key-id-in-hex': 'key-in-hex',
-      "3f726fd5cbbf5944437a4dbfab431b10": "376b009796e4ad50ea8f68d796676692"
+        '3f726fd5cbbf5944437a4dbfab431b10': '376b009796e4ad50ea8f68d796676692'
     }
   }
-            });
-            player.addEventListener('error', onPlayerErrorEvent);
-            controls.addEventListener('error', onUIErrorEvent);
-            try {
-                await player.load(manifestUri);
-                console.log('The video has now been loaded!');
-            } catch (error) {
-                onPlayerError(error);
-            }
-            player.getNetworkingEngine().registerRequestFilter(function(type, request) {
-                if (type == shaka.net.NetworkingEngine.RequestType.SEGMENT) {
-             //       request.headers['authorization'] = 'Bearer';
-                }
-            });
-  
+});
+   player.setTextTrackVisibility(true);
 //player.configure({drm:{servers:{'com.widevine.alpha':'https://license.dstv.com/widevine/getLicense?CrmId=afl&AccountId=afl&ContentId=SH2&SessionId=D3C00F885C24B9C6&Ticket=C839A8D71AB94299'}}}); 
 window.player = player; 
 window.ui = ui; 
